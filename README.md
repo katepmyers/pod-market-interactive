@@ -1,2 +1,2 @@
 # pod-market-interactive
-An interactive data journalism project exploring campus market prices.
+An interactive data journalism project exploring campus POD market prices.
