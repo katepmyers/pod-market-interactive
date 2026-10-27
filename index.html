@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POD Market Interactive Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+      color: #242424;
+    }
+    h1 {
+      color: #660000;
+    }
+    button {
+      background-color: #660000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 14px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #440000;
+    }
+  </style>
+</head>
+<body>
+  <h1>POD Market Price Explorer</h1>
+  <p>This is a test using fictional prices.</p>
+  <p id="product">Click the button to see an item!</p>
+  <button type="button" onclick="showItem()">
+    Show me another item
+  </button>
+  <script>
+    const products = [
+      "Energy drink: $4.50",
+      "Ramen: $2.25",
+      "Bag of chips: $3.75",
+      "Bottled water: $2.00"
+    ];
+    function showItem() {
+      const randomNumber = Math.floor(Math.random() * products.length);
+      document.getElementById("product").textContent = products[randomNumber];
+    }
+  </script>
+</body>
+</html>
