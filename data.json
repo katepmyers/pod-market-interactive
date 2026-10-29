@@ -1,0 +1,308 @@
+[
+  {
+    "name": "Skittles Pop'd",
+    "price": "$9.29",
+    "date": "Oct. 27",
+    "image": "images/IMG_7411.JPG"
+  },
+  {
+    "name": "Dot's Homestyle Pretzels",
+    "price": "$7.09",
+    "date": "Oct. 27",
+    "image": "images/IMG_7410.JPG"
+  },
+  {
+    "name": "Chex Mix",
+    "price": "$4.19",
+    "date": "Oct. 27",
+    "image": "images/IMG_7409.JPG"
+  },
+  {
+    "name": "Combos Cheddar Cheese Baked Pretzel",
+    "price": "$4.89",
+    "date": "Oct. 27",
+    "image": "images/IMG_7408.JPG"
+  },
+  {
+    "name": "Trolli Sour Brite Crawlers",
+    "price": "$3.79",
+    "date": "Oct. 27",
+    "image": "images/IMG_7407.JPG"
+  },
+  {
+    "name": "Starburst Minis",
+    "price": "$4.49",
+    "date": "Oct. 27",
+    "image": "images/IMG_7406.JPG"
+  },
+  {
+    "name": "Boom Chicka Pop Kettle Corn",
+    "price": "$4.19",
+    "date": "Oct. 27",
+    "image": "images/IMG_7405.JPG"
+  },
+  {
+    "name": "Made Good Organic Granola Bites",
+    "price": "$5.29",
+    "date": "Oct. 27",
+    "image": "images/IMG_7404.JPG"
+  },
+  {
+    "name": "Devour Creamy Alfredo Mac & Cheese",
+    "price": "$6.69",
+    "date": "Oct. 27",
+    "image": "images/IMG_7403.JPG"
+  },
+  {
+    "name": "Maruchan Hot & Spicy Chicken Ramen",
+    "price": "$1.79",
+    "date": "Oct. 27",
+    "image": "images/IMG_7402.JPG"
+  },
+  {
+    "name": "Skittles Gummies",
+    "price": "$4.69",
+    "date": "Oct. 27",
+    "image": "images/IMG_7401.JPG"
+  },
+  {
+    "name": "Spicy Sweet Chili Doritos",
+    "price": "$2.59",
+    "date": "Oct. 27",
+    "image": "images/IMG_7400.JPG"
+  },
+  {
+    "name": "Chester's Hot Fries",
+    "price": "$2.59",
+    "date": "Oct. 27",
+    "image": "images/IMG_7399.JPG"
+  },
+  {
+    "name": "Jack Link's Mr. Beast Beef Jerky",
+    "price": "$6.39",
+    "date": "Oct. 27",
+    "image": "images/IMG_7398.JPG"
+  },
+  {
+    "name": "Stouffer's Fettuccine Alfredo",
+    "price": "$6.29",
+    "date": "Oct. 27",
+    "image": "images/IMG_7397.JPG"
+  },
+  {
+    "name": "Stouffer's Mac & Cheese",
+    "price": "$6.19",
+    "date": "Oct. 27",
+    "image": "images/IMG_7396.JPG"
+  },
+  {
+    "name": "Digiorno Personal Size Pizza",
+    "price": "$7.49",
+    "date": "Oct. 27",
+    "image": "images/IMG_7395.JPG"
+  },
+  {
+    "name": "Tai Pei Beef & Broccoli",
+    "price": "$6.19",
+    "date": "Oct. 27",
+    "image": "images/IMG_7394.JPG"
+  },
+  {
+    "name": "Jimmy Dean Meat Lovers Breakfast Bowl",
+    "price": "$6.19",
+    "date": "Oct. 27",
+    "image": "images/IMG_7393.JPG"
+  },
+  {
+    "name": "TGI Fridays Mozzarella Sticks",
+    "price": "$8.49",
+    "date": "Oct. 27",
+    "image": "images/IMG_7391.JPG"
+  },
+  {
+    "name": "TGI Fridays Chicken Wings",
+    "price": "$8.39",
+    "date": "Oct. 27",
+    "image": "images/IMG_7392.JPG"
+  },
+  {
+    "name": "Devour Pesto Ravioli",
+    "price": "$7.89",
+    "date": "Oct. 27",
+    "image": "images/IMG_7390.JPG"
+  },
+  {
+    "name": "Amy's Enchilada Cheese",
+    "price": "$9.79",
+    "date": "Oct. 27",
+    "image": "images/IMG_7389.JPG"
+  },
+  {
+    "name": "Hagen-Dazs Chocolate Chip Cookie Dough Ice Cream",
+    "price": "$10.69",
+    "date": "Oct. 27",
+    "image": "images/IMG_7388.JPG"
+  },
+  {
+    "name": "Ben & Jerry's Half Baked Ice Cream",
+    "price": "$10.69",
+    "date": "Oct. 27",
+    "image": "images/IMG_7387.JPG"
+  },
+  {
+    "name": "Chobani Greek Yogurt",
+    "price": "$3.19",
+    "date": "Oct. 27",
+    "image": "images/IMG_7386.JPG"
+  },
+  {
+    "name": "Tastelli Drinkable Konjac Jelly",
+    "price": "$3.49",
+    "date": "Oct. 27",
+    "image": "images/IMG_7385.JPG"
+  },
+  {
+    "name": "Naked Smoothie",
+    "price": "$5.39",
+    "date": "Oct. 27",
+    "image": "images/IMG_7384.JPG"
+  },
+  {
+    "name": "Fairlife Milk",
+    "price": "$3.49",
+    "date": "Oct. 27",
+    "image": "images/IMG_7383.JPG"
+  },
+  {
+    "name": "Turkey BLT",
+    "price": "$7.89",
+    "date": "Oct. 27",
+    "image": "images/IMG_7382.JPG"
+  },
+  {
+    "name": "Classic Turkey & Cheese",
+    "price": "$7.89",
+    "date": "Oct. 27",
+    "image": "images/IMG_7381.JPG"
+  },
+  {
+    "name": "Oh Snap! Pickle",
+    "price": "$2.39",
+    "date": "Oct. 27",
+    "image": "images/IMG_7380.JPG"
+  },
+  {
+    "name": "Sabra Smart Snackers Hummus",
+    "price": "$4.89",
+    "date": "Oct. 27",
+    "image": "images/IMG_7379.JPG"
+  },
+  {
+    "name": "Sargento Pepper Jack",
+    "price": "$1.29",
+    "date": "Oct. 27",
+    "image": "images/IMG_7378.JPG"
+  },
+  {
+    "name": "Hillshire Italian Dry Salame",
+    "price": "$5.69",
+    "date": "Oct. 27",
+    "image": "images/IMG_7377.JPG"
+  },
+  {
+    "name": "Lunchables Protein Pack",
+    "price": "$4.19",
+    "date": "Oct. 27",
+    "image": "images/IMG_7376.JPG"
+  },
+  {
+    "name": "Smucker's Uncrustables",
+    "price": "$1.99",
+    "date": "Oct. 27",
+    "image": "images/IMG_7375.JPG"
+  },
+  {
+    "name": "Olli Sopressata",
+    "price": "$6.09",
+    "date": "Oct. 27",
+    "image": "images/IMG_7374.JPG"
+  },
+  {
+    "name": "Olli Genoa",
+    "price": "$5.79",
+    "date": "Oct. 27",
+    "image": "images/IMG_7373.JPG"
+  },
+  {
+    "name": "Bloom Energy Drink",
+    "price": "$4.79",
+    "date": "Oct. 28",
+    "image": "images/IMG_7414.JPG"
+  },
+  {
+    "name": "Hello Panda Chocolate",
+    "price": "$5.89",
+    "date": "Oct. 28",
+    "image": "images/IMG_7415.JPG"
+  },
+  {
+    "name": "Reese's Big Cup",
+    "price": "$3.79",
+    "date": "Oct. 28",
+    "image": "images/IMG_7416.JPG"
+  },
+  {
+    "name": "Milk Chocolate M&M's",
+    "price": "$3.69",
+    "date": "Oct. 28",
+    "image": "images/IMG_7417.JPG"
+  },
+  {
+    "name": "Cadbury Carmello",
+    "price": "$3.79",
+    "date": "Oct. 28",
+    "image": "images/IMG_7418.JPG"
+  },
+  {
+    "name": "Nerds Gummy Clusters",
+    "price": "$3.29",
+    "date": "Oct. 28",
+    "image": "images/IMG_7419.JPG"
+  },
+  {
+    "name": "Heinz Tomato Ketchup",
+    "price": "$6.89",
+    "date": "Oct. 28",
+    "image": "images/IMG_7420.JPG"
+  },
+  {
+    "name": "Tylenol",
+    "price": "$5.79",
+    "date": "Oct. 28",
+    "image": "images/IMG_7421.JPG"
+  },
+  {
+    "name": "Energizer Max AA 4 Pack",
+    "price": "$16.19",
+    "date": "Oct. 28",
+    "image": "images/IMG_7422.JPG"
+  },
+  {
+    "name": "Hair Ties",
+    "price": "$3.69",
+    "date": "Oct. 28",
+    "image": "images/IMG_7423.JPG"
+  },
+  {
+    "name": "Claritin",
+    "price": "$6.49",
+    "date": "Oct. 28",
+    "image": "images/IMG_7426.JPG"
+  },
+  {
+    "name": "Benadryl",
+    "price": "$6.59",
+    "date": "Oct. 28",
+    "image": "images/IMG_7427.JPG"
+  }
+]
