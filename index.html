@@ -30,25 +30,64 @@
     button:hover {
       background-color: #440000;
     }
+    img {
+      display: none;
+      max-width: 100%;
+      max-height: 400px
+      margin: 20px auto;
+    }
   </style>
 </head>
 <body>
   <h1>Get a Random POD Product</h1>
+  <img
+  id="product-image"
+  src=""
+  alt=""
+>
   <p id="product">Click the button to see a random item.</p>
   <button type="button" onclick="showItem()">
     Show me another item
   </button>
   <script>
-    const products = [
-      "Energy drink: $5",
-      "Ramen: $2.25",
-      "Chips: $3.75",
-      "Water: $2.00"
-    ];
-    function showItem() {
-      const randomNumber = Math.floor(Math.random() * products.length);
-      document.getElementById("product").textContent = products[randomNumber];
+  let products = [];
+  let previousIndex = -1;
+  fetch("data.json")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Could not load the product list.");
+      }
+      return response.json();
+    })
+    .then(data => {
+      products = data;
+    })
+    .catch(error => {
+      console.error(error);
+      document.getElementById("product").textContent =
+        "Sorry, the products could not be loaded.";
+    });
+
+  function showItem() {
+    if (products.length === 0) {
+      document.getElementById("product").textContent =
+        "The product list is still loading. Please try again.";
+      return;
     }
-  </script>
+
+    let randomNumber;
+    do {
+      randomNumber = Math.floor(Math.random() * products.length);
+    } while (products.length > 1 && randomNumber === previousIndex);
+    previousIndex = randomNumber;
+    const item = products[randomNumber];
+    document.getElementById("product").textContent =
+      item.name + ": " + item.price + " (checked " + item.date + ")";
+    const image = document.getElementById("product-image");
+    image.src = item.image;
+    image.alt = "POD Market photo for " + item.name;
+    image.style.display = "block";
+  }
+</script>
 </body>
 </html>
