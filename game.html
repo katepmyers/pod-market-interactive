@@ -135,19 +135,20 @@
       font-weight: bold;
       margin: 5px 0 12px;
     }
-    .product-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: auto;
-    }
+.product-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: auto;
+}
     .product-controls button {
       background-color: #5D1725;
       color: white;
       border: none;
       border-radius: 5px;
-      padding: 8px 12px;
+      padding: 8px 9px;      
       font-size: 16px;
     }
     .quantity {
@@ -369,7 +370,42 @@
 
       emptyCartMessage.hidden = hasItems;
     }
+function addItems(index, requestedQuantity) {
+  const product = products[index];
+  const remaining = startingBalance - getCartTotal();
 
+  // Calculate how many the reader can afford.
+  const affordableQuantity = Math.floor(
+    remaining / product.priceCents
+  );
+
+  // Add either the requested amount or the affordable amount.
+  const quantityToAdd = Math.min(
+    requestedQuantity,
+    affordableQuantity
+  );
+
+  quantities[index] += quantityToAdd;
+  message.textContent = "";
+  updateGame();
+
+  const moneyLeft = startingBalance - getCartTotal();
+
+  if (moneyLeft === 0 && quantityToAdd > 0) {
+    showReceipt("You've spent your entire balance!");
+  } else if (quantityToAdd < requestedQuantity) {
+    if (quantityToAdd === 0) {
+      showReceipt(
+        "You don't have enough left to add " + product.name + "."
+      );
+    } else {
+      showReceipt(
+        "You could afford " + quantityToAdd + " of this item, " +
+        "but not all " + requestedQuantity + "."
+      );
+    }
+  }
+}
     function displayProducts() {
       productGrid.replaceChildren();
 
@@ -392,52 +428,79 @@
         const controls = document.createElement("div");
         controls.className = "product-controls";
 
-        const removeButton = document.createElement("button");
-        removeButton.type = "button";
-        removeButton.id = "remove-" + index;
-        removeButton.textContent = "−";
-        removeButton.setAttribute("aria-label", "Remove one " + product.name);
+// Remove up to 10.
+const removeTenButton = document.createElement("button");
+removeTenButton.type = "button";
+removeTenButton.textContent = "−10";
+removeTenButton.setAttribute(
+  "aria-label",
+  "Remove up to ten " + product.name
+);
 
-        const quantity = document.createElement("span");
-        quantity.id = "quantity-" + index;
-        quantity.className = "quantity";
-        quantity.textContent = "0";
+// Remove one.
+const removeButton = document.createElement("button");
+removeButton.type = "button";
+removeButton.id = "remove-" + index;
+removeButton.textContent = "−";
+removeButton.setAttribute(
+  "aria-label",
+  "Remove one " + product.name
+);
 
-        const addButton = document.createElement("button");
-        addButton.type = "button";
-        addButton.id = "add-" + index;
-        addButton.textContent = "+";
-        addButton.setAttribute("aria-label", "Add one " + product.name);
+// Show the quantity in the cart.
+const quantity = document.createElement("span");
+quantity.id = "quantity-" + index;
+quantity.className = "quantity";
+quantity.textContent = "0";
 
-        removeButton.addEventListener("click", function() {
-          if (quantities[index] > 0) {
-            quantities[index]--;
-            message.textContent = "";
-            updateGame();
-          }
-        });
+// Add one.
+const addButton = document.createElement("button");
+addButton.type = "button";
+addButton.id = "add-" + index;
+addButton.textContent = "+";
+addButton.setAttribute(
+  "aria-label",
+  "Add one " + product.name
+);
 
-addButton.addEventListener("click", function() {
-  const remaining = startingBalance - getCartTotal();
+// Add up to 10.
+const addTenButton = document.createElement("button");
+addTenButton.type = "button";
+addTenButton.textContent = "+10";
+addTenButton.setAttribute(
+  "aria-label",
+  "Add up to ten " + product.name
+);
 
-  if (product.priceCents <= remaining) {
-    quantities[index]++;
+removeButton.addEventListener("click", function() {
+  if (quantities[index] > 0) {
+    quantities[index]--;
     message.textContent = "";
     updateGame();
-
-    // Show the receipt automatically if the balance reaches exactly $0.
-    if (startingBalance - getCartTotal() === 0) {
-      showReceipt("You've spent your entire balance!");
-    }
-  } else {
-    // The item is not added because it costs more than the balance.
-    showReceipt(
-      "You don't have enough left to add " + product.name + "."
-    );
   }
 });
 
-        controls.append(removeButton, quantity, addButton);
+removeTenButton.addEventListener("click", function() {
+  quantities[index] = Math.max(0, quantities[index] - 10);
+  message.textContent = "";
+  updateGame();
+});
+
+addButton.addEventListener("click", function() {
+  addItems(index, 1);
+});
+
+addTenButton.addEventListener("click", function() {
+  addItems(index, 10);
+});
+
+controls.append(
+  removeTenButton,
+  removeButton,
+  quantity,
+  addButton,
+  addTenButton
+);
         card.append(image, name, price, controls);
         productGrid.appendChild(card);
       });
@@ -454,15 +517,20 @@ addButton.addEventListener("click", function() {
         return response.json();
       })
       .then(function(data) {
-        products = data.map(function(item) {
-          return {
-            name: item.name,
-            image: item.image,
-            priceCents: Math.round(
-              Number(item.price.replace("$", "")) * 100
-            )
-          };
-        });
+products = data.map(function(item) {
+  return {
+    name: item.name,
+    image: item.image,
+    priceCents: Math.round(
+      Number(item.price.replace("$", "")) * 100
+    )
+  };
+});
+
+// Sort products from lowest price to highest price.
+products.sort(function(a, b) {
+  return a.priceCents - b.priceCents;
+});
 
         quantities = products.map(function() {
           return 0;
